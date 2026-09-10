@@ -35,8 +35,6 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
-          SONAR_ORG: ${{ vars.SONAR_ORG }}
-          SONAR_PROJECT_KEY: ${{ vars.SONAR_PROJECT_KEY }}
         with:
           args: >
             -Dsonar.organization=${{ vars.SONAR_ORG }}
