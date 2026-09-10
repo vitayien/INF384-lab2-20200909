@@ -60,12 +60,23 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Obtener Versión Semántica
+        # LE AGREGAMOS UN ID PARA PODER REFERENCIARLO DESPUÉS
+        id: obtener_version
+        run: |
+          # Leemos el archivo VERSION de la raíz
+          VERSION=$(python -c "print(open('VERSION').read().strip())")
+          echo "La versión detectada es: '$VERSION'"
+          
+          # Guardamos la versión como un OUTPUT del paso
+          echo "version_pkg=$VERSION" >> $GITHUB_OUTPUT
+
       - name: Construir el paquete
         run: python -m build
 
       - name: Publicar el paquete
         uses: actions/upload-artifact@v4
         with:
-          name: despachos-${{ env.VERSION }}
+          name: despachos-${{ steps.obtener_version.outputs.version_pkg }}
           path: dist/
           overwrite: true
