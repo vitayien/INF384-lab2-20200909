@@ -28,3 +28,4 @@ Se utilizó IA para:
 - Como colocar la condicion 3 en el pipeline: Como coloco esta condición? Condición 3: Fuerza al pipeline a esperar y detenerse si falla el Quality Gate en mi pipeline.yml
 - Como colocar la condicion 4: Como coloco esta condición?  El artifact publicado debe llamarse despachos-<versión>, solo desde main, y solo si la validación pasó en mi pipeline.yml
 - Se uso IA generativa para la descripción y el titulo de los commits.
+- Agregar el versioning: Como puedo agregar el VERSION a mi pipeline.
